@@ -1,0 +1,232 @@
+body {
+    font-family: Montserrat, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: none; /* Remove background from body */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(https://media.vanityfair.com/photos/5e79035f52ad2c00089f4f9b/master/w_2560%2Cc_limit/h_15347069.jpg) no-repeat center center fixed;
+    background-size: cover;
+    filter: blur(3px); /* Apply blur only to the background */
+    z-index: -1; /* Ensure background stays behind the content */
+}
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 80%;
+  padding: 80px;
+  text-align: center;
+  margin-top: 1000px;
+}
+
+.content {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    z-index: 1; /* Keep content in front */
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    color: #333333;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 1px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 20px;
+  overflow-x: auto;
+  margin-top: 100px;
+}
+
+.box {
+    flex: 0 0 20%;
+    width: 300px;
+    height: 200px;
+    margin: 10px;
+    background-color: rgba(119, 119, 119, 0.45);
+    border-radius: 50px; /* Increased border radius for more rounded corners */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease-in-out;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.box h1 {
+    font-size: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.box p {
+    position: absolute;
+    top: 100%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+}
+
+.box:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #333333;
+}
+
+.box:hover h1 {
+    transform: translateY(-60px);
+}
+
+.box:hover p {
+    top: 50%;
+    opacity: 1;
+    transform: translateY(-50%);
+    justify-content: center;
+}
+
+.trading212-box {
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: relative; /* Use relative positioning for better control */
+  width: 80%;
+  margin: 0 auto; /* Center the box horizontally */
+  padding: 20px;
+  text-align: center;
+  margin-top: 150px;
+}
+
+.slider {
+  overflow: hidden; /* Hides images that are not currently in view */
+  width: 100%; /* Ensure the slider fits the container */
+}
+
+.slider figure {
+  position: relative;
+  width: 400%; /* Adjust width for four images (100% per image) */
+  margin: 0;
+  left: 0;
+  display: flex; /* Use flexbox to lay out images and captions */
+  animation: 15s slider infinite;
+}
+
+.slide-item {
+  width: 25%;
+  text-align: center;
+  display: flex; /* Use flexbox to center the image and caption */
+  flex-direction: column; /* Arrange image and caption vertically */
+  align-items: center; /* Center the image and caption horizontally */
+}
+
+.slider figure img {
+  width: 50%; /* Each image takes up the full width of the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure the images are block elements, so no unwanted space below */
+}
+
+.slider figure figcaption {
+  margin-top: 10px; /* Adds space between the image and the caption */
+  font-size: 30px;
+}
+
+@keyframes slider {
+  0% {
+    left: 0;
+  }
+  10% {
+    left: 0;
+  }
+  25% {
+    left: 0;
+  }
+  40% {
+    left: -100%;
+  }
+  55% {
+    left: -100%;
+  }
+  65% {
+    left: -200%;
+  }
+  80% {
+    left: -200%;
+  }
+  100% {
+    left: -300%;
+  }
+}
+
+.extra-info {
+    padding: 40px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    color: #fff;
+    word-wrap: break-word; /* Ensure text wraps inside the container */
+    box-sizing: border-box; /* Ensure padding is included in the element's width */
+    margin-top: 700px;
+}
+
+footer {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    text-align: center;
+}
+
+.footer-menu {
+    padding: 20px 0;
+}
+
+.footer-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.footer-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-details {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 20px;
+}
